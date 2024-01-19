@@ -1,4 +1,4 @@
-# Rock Paper Scissors Game
+# Rock Paper Scissors Game - ODIN PROJECT
 
 1. **Start a new Git repo for your project.**
 
