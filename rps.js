@@ -15,41 +15,42 @@ function getComputerChoice() {
 }
 
 function gameCases(computerChoice, playerChoice, playerCount, computerCount) {
+  let updtPlayerCount = playerCount;
+  let updtComputerCount = computerCount;
+
   if (computerChoice === playerChoice) {
     console.log(
       `:: You picked ${playerChoice}, while computer picked ${computerChoice}`
     );
     console.log("This is a draw");
-    return;
   }
   if (computerChoice == "scissors" && playerChoice == "paper") {
-    computerCount += 1;
+    updtComputerCount += 1;
     console.log(
       `:: You picked ${playerChoice}, while computer picked ${computerChoice}`
     );
-    console.log(`Computer wins ${computerCount}`);
-    return;
+    console.log(`Computer wins ${updtComputerCount}`);
   } else if (computerChoice === "paper" && playerChoice === "rock") {
-    computerCount += 1;
+    updtComputerCount += 1;
     console.log(
       `:: You picked ${playerChoice}, while computer picked ${computerChoice}`
     );
-    console.log(`Player wins ${computerCount}`);
-    return;
+    console.log(`Player wins ${updtComputerCount}`);
   } else if (computerChoice === "rock" && playerChoice === "scissors") {
-    computerCount += 1;
+    updtComputerCount += 1;
     console.log(
       `:: You picked ${playerChoice}, while computer picked ${computerChoice}`
     );
-    console.log(`Computer wins ${computerCount}`);
-    return;
+    console.log(`Computer wins ${updtComputerCount}`);
   } else {
     console.log(
       `:: You picked ${playerChoice}, while computer picked ${computerChoice}`
     );
-    playerCount += 1;
-    console.log(`Player wins ${playerCount}`);
+    updtPlayerCount += 1;
+    console.log(`Player wins ${updtPlayerCount}`);
   }
+
+  return { updtPlayerCount, updtComputerCount };
 }
 getComputerChoice();
 
@@ -58,7 +59,14 @@ while (true) {
   let playerChoice = getPlayerChoice();
 
   if (options.includes(playerChoice)) {
-    gameCases(computerChoice, playerChoice, playerCount, computerCount);
+    const { updtComputerCount, updtPlayerCount } = gameCases(
+      computerChoice,
+      playerChoice,
+      playerCount,
+      computerCount
+    );
+    playerCount = updtPlayerCount;
+    computerCount = updtComputerCount;
   } else {
     console.log("Alaye, do the correct thing!!");
   }
