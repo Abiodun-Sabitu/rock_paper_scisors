@@ -4,8 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .wrapper {
+        /* display: flex; */
+        /* border: solid red; */
+        margin: auto;
+        width: 800px;
+        margin-top: 10%;
+        text-align: center;
+      }
+      .game_box {
+        display: flex;
+        /* border: solid red; */
+        margin: auto;
+        width: 800px;
+      }
+
+      .btn_section {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 200px;
+        height: 300px;
+
+        /* margin: auto; */
+      }
+      .btn_section button {
+        width: 120px;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 1px 3px 25px rgba(0, 0, 2, 0.09);
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .btn_section button:hover {
+        background-color: rgba(245, 245, 245, 0.426);
+        border: solid 1px orangered;
+      }
+      .output {
+        border: solid 1px orangered;
+        width: 800px;
+        padding: 10px;
+        border-radius: 12px;
+      }
+      .title {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <div class="wrapper">
+      <h5>Rock Paper Scissor Game! Pick your Shape by selecting a Button</h5>
+      <div class="game_box">
+        <section class="btn_section">
+          <button type="button" class="rpsBtn">Rock</button>
+          <button type="button" class="rpsBtn">Paper</button>
+          <button type="button" class="rpsBtn">Scissors</button>
+        </section>
+        <section class="output"></section>
+      </div>
+    </div>
     <script src="rpsApp.js"></script>
   </body>
 </html>
